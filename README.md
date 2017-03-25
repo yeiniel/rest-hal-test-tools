@@ -1,4 +1,5 @@
 # REST HAL Test Tools
+[![Build Status](https://travis-ci.org/zephyrec/rest-hal-test-tools.svg?branch=master)](https://travis-ci.org/zephyrec/rest-hal-test-tools)
 
 This project provide common tests for [REST][rest] APIs that use the
 [JSON Hypertext Application Language][hal] Media Type. Provided tests
