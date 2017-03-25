@@ -28,7 +28,9 @@
   },
   "homepage": "https://github.com/zephyrec/rest-hal-test-tools#readme",
   "devDependencies": {
+    "@types/supertest": "^2.0.0",
     "ava": "^0.18.2",
+    "supertest": "^3.0.0",
     "tslint": "^4.5.1",
     "typedoc": "^0.5.9",
     "typescript": "^2.2.1"
