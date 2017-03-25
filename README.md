@@ -21,19 +21,20 @@ projects without problems.
 ## Example Usage
 The following code demonstrate howto use the library:
 
-    const ava = require('ava');
-    const restHalTestTools = require('rest-hal-test-tools');
-    const superTest = require('supertest');
+```node
+const ava = require('ava');
+const restHalTestTools = require('rest-hal-test-tools');
+const superTest = require('supertest');
 
-    // setup test context by providing the resource and the agent
-    ava.beforeEach(t => {
-      t.context.resource = '/some/resource';
-      t.context.agent = supertest('https://some.api');
-    });
+// setup test context by providing the resource and the agent
+ava.beforeEach(t => {
+  t.context.resource = '/some/resource';
+  t.context.agent = supertest('https://some.api');
+});
 
-    // use tests provided by the rest-hal-test-tools package
-    ava(restHalTestTools.resourceImplementOptionsMethod);
-
+// use tests provided by the rest-hal-test-tools package
+ava(restHalTestTools.resourceImplementOptionsMethod);
+```
 
 
 [ava]: https://github.com/avajs
