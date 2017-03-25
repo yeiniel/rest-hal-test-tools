@@ -1,0 +1,41 @@
+{
+  "name": "@zephyrec/rest-hal-test-tools",
+  "version": "1.0.0",
+  "description": "REST HAL Test Tools",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "tsc",
+    "pretest": "tsc",
+    "test": "ava",
+    "typedoc": "typedoc --out doc src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zephyrec/rest-hal-test-tools.git"
+  },
+  "keywords": [
+    "rest",
+    "test",
+    "hal",
+    "ava",
+    "supertest"
+  ],
+  "author": "Zephyr <lococeq.1985@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zephyrec/rest-hal-test-tools/issues"
+  },
+  "homepage": "https://github.com/zephyrec/rest-hal-test-tools#readme",
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "tslint": "^4.5.1",
+    "typedoc": "^0.5.9",
+    "typescript": "^2.2.1"
+  },
+  "peerDependencies": {
+    "@types/supertest": "^2.0.0",
+    "ava": "^0.18.2",
+    "supertest": "^3.0.0"
+  }
+}
