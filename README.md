@@ -37,6 +37,9 @@ ava.beforeEach(t => {
 ava(restHalTestTools.resourceImplementOptionsMethod);
 ```
 
+## Licensing
+
+The code in this project is licensed under MIT license.
 
 [ava]: https://github.com/avajs
 [hal]: https://tools.ietf.org/html/draft-kelly-json-hal-08
