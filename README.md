@@ -1,5 +1,6 @@
 # REST HAL Test Tools
 [![Build Status](https://travis-ci.org/zephyrec/rest-hal-test-tools.svg?branch=master)](https://travis-ci.org/zephyrec/rest-hal-test-tools)
+[![Coverage Status](https://coveralls.io/repos/github/zephyrec/rest-hal-test-tools/badge.svg?branch=master)](https://coveralls.io/github/zephyrec/rest-hal-test-tools?branch=master)
 
 This project provide common tests for [REST][rest] APIs that use the
 [JSON Hypertext Application Language][hal] Media Type. Provided tests
@@ -21,7 +22,7 @@ projects without problems.
 ## Example Usage
 The following code demonstrate howto use the library:
 
-```node
+```javascript
 const ava = require('ava');
 const restHalTestTools = require('rest-hal-test-tools');
 const superTest = require('supertest');
