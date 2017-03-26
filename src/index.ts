@@ -2,4 +2,5 @@
 
 export * from "./rest-hal-test-context";
 
-export * from "./resource-implement-options-method";
+export {resourceImplementOptionsMethod} from
+  "./resource-implement-options-method";
