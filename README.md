@@ -35,6 +35,7 @@ ava.beforeEach(t => {
 
 // use tests provided by the rest-hal-test-tools package
 ava(restHalTestTools.resourceImplementOptionsMethod);
+ava(restHalTestTools.resourceImplementGetMethod);
 ```
 
 

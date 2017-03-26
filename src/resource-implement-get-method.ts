@@ -4,7 +4,7 @@ import * as superTest from "supertest";
 
 import * as restHalTestContext from "./rest-hal-test-context";
 
-/** Check if the resource under test implement the OPTIONS method */
+/** Check if the resource under test implement the GET method */
 export function resourceImplementGetMethod(
     t: restHalTestContext.IRestHalTestContext): superTest.Test {
   let request =  t.context.agent.get(t.context.resource);
