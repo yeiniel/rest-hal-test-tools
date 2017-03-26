@@ -6,21 +6,17 @@ const ava = require('ava'),
   superTest = require('supertest');
 
 ava("resourceImplementGetMethod fail if agent not provided", (t) => {
-  let testContext = { context: {} };
-
   t.throws(
-    restHalTestTools.resourceImplementGetMethod.bind(null, testContext),
-    'Cannot read property \'options\' of undefined'
+    restHalTestTools.resourceImplementGetMethod.bind(null, t),
+    'Cannot read property \'get\' of undefined'
   );
 });
 
 ava("resourceImplementGetMethod fail if resource not provided", (t) => {
-  let testContext = { context: {
-    agent: superTest('http://some.api')
-  } };
+  t.context.agent = superTest('http://some.api');
 
   t.throws(
-    restHalTestTools.resourceImplementGetMethod.bind(null, testContext),
+    restHalTestTools.resourceImplementGetMethod.bind(null, t),
     'undefined'
   );
 });
@@ -31,12 +27,10 @@ ava("resourceImplementGetMethod fail if status is not 200", (t) => {
     res.end();
   }
 
-  let testContext = { context: {
-    resource: "/",
-    agent: superTest(handler)
-  } };
+  t.context.resource = "/";
+  t.context.agent = superTest(handler);
 
-  restHalTestTools.resourceImplementGetMethod(testContext)
+  restHalTestTools.resourceImplementGetMethod(t)
     .end((res) => { t.ifError(res); });
 });
 
@@ -46,11 +40,8 @@ ava("resourceImplementGetMethod succeed if status is 200", (t) => {
     res.end();
   }
 
-  let testContext = { context: {
-    resource: "/",
-    agent: superTest(handler)
-  } };
+  t.context.resource = "/";
+  t.context.agent = superTest(handler);
 
-  restHalTestTools.resourceImplementGetMethod(testContext)
-    .end((res) => { t.is(res, null); });
+  return restHalTestTools.resourceImplementGetMethod(t);
 });
