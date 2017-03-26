@@ -10,3 +10,7 @@
 
 # Ignore any IDE specific file
 /.idea/
+
+# Ignore coverage report files
+/.nyc_output/
+/coverage/

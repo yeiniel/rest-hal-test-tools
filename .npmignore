@@ -16,3 +16,7 @@
 
 # Ignore project tests
 /test/
+
+# Ignore coverage report files
+/.nyc_output/
+/coverage/
