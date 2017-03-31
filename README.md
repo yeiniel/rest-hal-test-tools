@@ -24,7 +24,7 @@ The following code demonstrate howto use the library:
 
 ```javascript
 const ava = require('ava');
-const restHalTestTools = require('rest-hal-test-tools');
+const restHalTestTools = require('@zephyrec/rest-hal-test-tools');
 const superTest = require('supertest');
 
 // setup test context by providing the resource and the agent
