@@ -1,6 +1,6 @@
 {
   "name": "@zephyrec/rest-hal-test-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "REST HAL Test Tools",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
