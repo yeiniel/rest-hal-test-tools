@@ -1,4 +1,8 @@
-# Change Log
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/zephyrec/rest-hal-test-tools/compare/v1.0.1...v1.1.0) (2017-03-31)
+
+### Feature
+* Resource implement get method ([01fb5e3](https://github.com/zephyrec/rest-hal-test-tools/commit/01fb5e3b9861e0320b03a52304ae95602dd8a8fc))
 
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/zephyrec/rest-hal-test-tools/compare/v1.0.0...v1.0.1) (2017-03-31)
