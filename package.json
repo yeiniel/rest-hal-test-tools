@@ -1,5 +1,5 @@
 {
-  "name": "@zephyrec/rest-hal-test-tools",
+  "name": "~zephyrec/rest-hal-test-tools",
   "version": "1.0.0",
   "description": "REST HAL Test Tools",
   "main": "dist/index.js",
