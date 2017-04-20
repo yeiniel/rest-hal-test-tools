@@ -1,3 +1,11 @@
+
+<a name="1.1.1"></a>
+# [1.1.1](https://github.com/zephyrec/rest-hal-test-tools/compare/v1.1.0...v1.1.1) (2017-04-19)
+
+### Bug Fixes
+
+* #4 resourceImplementOptionsMethod Test finished without running any assertions ([56c3371](https://github.com/zephyrec/rest-hal-test-tools/commit/56c3371f28652d0b07136d6060eca71423bb29e8))
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/zephyrec/rest-hal-test-tools/compare/v1.0.1...v1.1.0) (2017-03-31)
 
