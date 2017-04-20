@@ -9,5 +9,7 @@ export function resourceImplementOptionsMethod(
         t: restHalTestContext.IRestHalTestContext): superTest.Test {
     let request =  t.context.agent.options(t.context.resource);
 
-    return request.expect(200);
+  return request.expect((res) => {
+    t.true(res.status >= 200 && res.status < 400);
+  });
 }
