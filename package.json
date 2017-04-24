@@ -1,6 +1,6 @@
 {
   "name": "@zephyrec/rest-hal-test-tools",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "REST HAL Test Tools",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/zephyrec/rest-hal-test-tools#readme",
   "devDependencies": {
     "@types/supertest": "^2.0.0",
-    "ava": "^0.18.2",
+    "ava": "^0.19.1",
     "coveralls": "^2.12.0",
     "nyc": "^10.1.2",
     "supertest": "^3.0.0",
@@ -39,7 +39,7 @@
   },
   "peerDependencies": {
     "@types/supertest": "^2.0.0",
-    "ava": "^0.18.2",
+    "ava": "^0.19.1",
     "supertest": "^3.0.0"
   }
 }

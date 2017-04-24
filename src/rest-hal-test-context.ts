@@ -16,7 +16,7 @@ export interface IRestHalTestContextContext {
  * elements are: the URL of the resource under test and the SuperTest agent to
  * use.
  */
-export interface IRestHalTestContext extends ava.ContextualTestContext {
+export interface IRestHalTestContext extends ava.TestContext {
 
     context: IRestHalTestContextContext;
 }
