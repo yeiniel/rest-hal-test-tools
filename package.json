@@ -8,7 +8,7 @@
     "prepublish": "tsc",
     "pretest": "tsc",
     "test": "nyc ava",
-    "typedoc": "typedoc --out doc src"
+    "typedoc": "typedoc --out docs src"
   },
   "repository": {
     "type": "git",
