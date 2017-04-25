@@ -20,7 +20,7 @@ declaration file for its content so you can use it on Typescript
 projects without problems.
 
 ## Example Usage
-The following code demonstrate howto use the library:
+The following code demonstrate how to use the library:
 
 ```javascript
 const ava = require('ava');
