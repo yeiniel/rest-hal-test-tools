@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/zephyrec/rest-hal-test-tools/issues"
   },
-  "homepage": "https://github.com/zephyrec/rest-hal-test-tools#readme",
+  "homepage": "https://zephyrec.github.io/rest-hal-test-tools/",
   "devDependencies": {
     "@types/supertest": "^2.0.0",
     "ava": "^0.19.1",
