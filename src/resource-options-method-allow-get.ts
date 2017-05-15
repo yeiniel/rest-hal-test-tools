@@ -24,11 +24,11 @@ import * as testContext from "./test-context";
  *    t.context.resource = "/";
  * });
  *
- * ava(restHALTestTools.resourceImplementGETMethod);
+ * ava(restHALTestTools.resourceOPTIONSMethodAllowGET);
  * ```
  */
-export async function resourceImplementGETMethod(t: testContext.TestContext) {
-    const response = await t.context.agent.get(t.context.resource);
+export async function resourceOPTIONSMethodAllowGET(t: testContext.TestContext) {
+  const response = await t.context.agent.options(t.context.resource);
 
-    t.is(response.status, 200);
+  t.not(response.header.allow.indexOf("GET"), -1);
 }

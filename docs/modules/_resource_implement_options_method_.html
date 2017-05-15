@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_resource_implement_options_method_.html#resourceimplementoptionsmethod" class="tsd-kind-icon">resource<wbr>Implement<wbr>Options<wbr>Method</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_resource_implement_options_method_.html#resourceimplementoptionsmethod" class="tsd-kind-icon">resource<wbr>ImplementOPTIONSMethod</a></li>
 							</ul>
 						</section>
 					</div>
@@ -83,29 +83,50 @@
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="resourceimplementoptionsmethod" class="tsd-anchor"></a>
-					<h3>resource<wbr>Implement<wbr>Options<wbr>Method</h3>
+					<h3>resource<wbr>ImplementOPTIONSMethod</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">resource<wbr>Implement<wbr>Options<wbr>Method<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">restHalTestContext.IRestHalTestContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">superTest.Test</span></li>
+						<li class="tsd-signature tsd-kind-icon">resource<wbr>ImplementOPTIONSMethod<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">testContext.TestContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/23cfbe6/src/resource-implement-options-method.ts#L8">resource-implement-options-method.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/b6b3dff/src/resource-implement-options-method.ts#L30">resource-implement-options-method.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Check if the resource under test implement the OPTIONS method</p>
+									<p>Test that resource implement the GET method</p>
 								</div>
+								<p>see <a href="../interfaces/_test_context_.itestcontext.html">ITestContext</a> for more info on how to establish the URL of the resource
+								under test and the agent used to reach it.</p>
+								<p>Example usage in typescript:</p>
+								<pre><code><span class="hljs-keyword">import</span> ava <span class="hljs-keyword">from</span> <span class="hljs-string">"ava"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">"express"</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> superTest <span class="hljs-keyword">from</span> <span class="hljs-string">"supertest"</span>;
+
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> restHALTestTools <span class="hljs-keyword">from</span> <span class="hljs-string">"@zephyrec/rest-hal-test-tools"</span>;
+
+ava.beforeEach(<span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span> {
+   <span class="hljs-keyword">const</span> app = express();
+
+   <span class="hljs-comment">// provide an endpoint handler for the GET method</span>
+   app.get(<span class="hljs-string">"/"</span>, <span class="hljs-function">(<span class="hljs-params">_, res</span>) =&gt;</span> { res.end(); });
+
+   t.context.agent = superTest(app);
+   t.context.resource = <span class="hljs-string">"/"</span>;
+});
+
+ava(restHALTestTools.resourceImplementOPTIONSMethod);
+</code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>t: <span class="tsd-signature-type">restHalTestContext.IRestHalTestContext</span></h5>
+									<h5>t: <span class="tsd-signature-type">testContext.TestContext</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">superTest.Test</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -127,14 +148,17 @@
 						<a href="_resource_implement_options_method_.html">"resource-<wbr>implement-<wbr>options-<wbr>method"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_rest_hal_test_context_.html">"rest-<wbr>hal-<wbr>test-<wbr>context"</a>
+						<a href="_resource_options_method_allow_get_.html">"resource-<wbr>options-<wbr>method-<wbr>allow-<wbr>get"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_test_context_.html">"test-<wbr>context"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_resource_implement_options_method_.html#resourceimplementoptionsmethod" class="tsd-kind-icon">resource<wbr>Implement<wbr>Options<wbr>Method</a>
+						<a href="_resource_implement_options_method_.html#resourceimplementoptionsmethod" class="tsd-kind-icon">resource<wbr>ImplementOPTIONSMethod</a>
 					</li>
 				</ul>
 			</nav>

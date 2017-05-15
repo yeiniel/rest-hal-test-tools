@@ -1,14 +1,15 @@
 {
   "name": "@zephyrec/rest-hal-test-tools",
-  "version": "1.1.2",
-  "description": "REST HAL Test Tools",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "version": "2.0.0",
+  "description": "Tests for RESTful APIs using HAL+JSON media type",
+  "main": "src/index.js",
+  "typings": "src/index.d.ts",
   "scripts": {
     "prepublish": "tsc",
     "pretest": "tsc",
-    "test": "nyc ava",
-    "typedoc": "typedoc --out docs src"
+    "test": "nyc ava src/*.spec.js",
+    "tslint": "tslint -c tslint.json -e 'src/**/*.d.ts' 'src/**/*.ts'",
+    "typedoc": "typedoc --exclude **/*.spec.ts --out docs src"
   },
   "repository": {
     "type": "git",
@@ -28,16 +29,16 @@
   },
   "homepage": "https://zephyrec.github.io/rest-hal-test-tools/",
   "devDependencies": {
+    "@types/express": "^4.0.35",
     "@types/supertest": "^2.0.0",
-    "ava": "^0.19.1",
-    "coveralls": "^2.12.0",
-    "nyc": "^10.1.2",
-    "supertest": "^3.0.0",
-    "tslint": "^4.5.1",
-    "typedoc": "^0.5.9",
-    "typescript": "^2.2.1"
+    "coveralls": "^2.13.1",
+    "express": "^4.15.2",
+    "nyc": "^10.3.2",
+    "tslint": "^5.1.0",
+    "typedoc": "^0.6.0",
+    "typescript": "^2.3.1"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@types/supertest": "^2.0.0",
     "ava": "^0.19.1",
     "supertest": "^3.0.0"
