@@ -91,7 +91,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/77979ed/src/resource-implement-options-method.ts#L27">resource-implement-options-method.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/b6b3dff/src/resource-implement-options-method.ts#L30">resource-implement-options-method.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -107,8 +107,11 @@
 
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> restHALTestTools <span class="hljs-keyword">from</span> <span class="hljs-string">"@zephyrec/rest-hal-test-tools"</span>;
 
-ava.beforeEach(<span class="hljs-function"><span class="hljs-params">(t)</span> =&gt;</span> {
-   const app = express();
+ava.beforeEach(<span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span> {
+   <span class="hljs-keyword">const</span> app = express();
+
+   <span class="hljs-comment">// provide an endpoint handler for the GET method</span>
+   app.get(<span class="hljs-string">"/"</span>, <span class="hljs-function">(<span class="hljs-params">_, res</span>) =&gt;</span> { res.end(); });
 
    t.context.agent = superTest(app);
    t.context.resource = <span class="hljs-string">"/"</span>;
