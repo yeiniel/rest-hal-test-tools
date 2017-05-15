@@ -64,14 +64,19 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="rest-hal-test-tools">REST HAL Test Tools</h1>
+				<h1 id="tests-for-restful-apis-using-hal-json-media-type">Tests for RESTful APIs using HAL+JSON media type</h1>
 				<p><a href="https://travis-ci.org/zephyrec/rest-hal-test-tools"><img src="https://travis-ci.org/zephyrec/rest-hal-test-tools.svg?branch=master" alt="Build Status"></a>
 				<a href="https://coveralls.io/github/zephyrec/rest-hal-test-tools?branch=master"><img src="https://coveralls.io/repos/github/zephyrec/rest-hal-test-tools/badge.svg?branch=master" alt="Coverage Status"></a></p>
 				<p>This project provide common tests for <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> APIs that use the
 					<a href="https://tools.ietf.org/html/draft-kelly-json-hal-08">JSON Hypertext Application Language</a> Media Type. Provided tests
 					are meant to be used with the <a href="https://github.com/avajs">AVA</a> JavaScript test runner and
 				employ the <a href="https://github.com/visionmedia/supertest">SuperTest</a> HTTP assertion library.</p>
-				<h2 id="reference-documentation">Reference Documentation</h2>
+				<h2 id="installation">Installation</h2>
+				<p><code>rest-hal-test-tools</code> runs on Node.js and is available as an NPM
+					package. You can install <code>rest-hal-test-tools</code> in your project&#39;s
+				directory as usual:</p>
+				<pre><code><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">zephyrec</span>/<span class="hljs-keyword">rest</span>-<span class="hljs-keyword">hal</span>-<span class="hljs-keyword">test</span>-<span class="hljs-keyword">tools</span> --save-dev
+</code></pre><h2 id="reference-documentation">Reference Documentation</h2>
 				<p>Reference documentation for this project can be generated from the
 					inline comments on source code using the <a href="http://typedoc.org/">Typedoc</a>
 				documentation generator. The following command ease the task:</p>
@@ -80,22 +85,6 @@
 				<p>This package is written in <a href="https://www.typescriptlang.org/">Typescript</a> and it provide a
 					declaration file for its content so you can use it on Typescript
 				projects without problems.</p>
-				<h2 id="example-usage">Example Usage</h2>
-				<p>The following code demonstrate howto use the library:</p>
-				<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> ava = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ava'</span>);
-<span class="hljs-keyword">const</span> restHalTestTools = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@zephyrec/rest-hal-test-tools'</span>);
-<span class="hljs-keyword">const</span> superTest = <span class="hljs-built_in">require</span>(<span class="hljs-string">'supertest'</span>);
-
-<span class="hljs-comment">// setup test context by providing the resource and the agent</span>
-ava.beforeEach(<span class="hljs-function"><span class="hljs-params">t</span> =&gt;</span> {
-  t.context.resource = <span class="hljs-string">'/some/resource'</span>;
-  t.context.agent = supertest(<span class="hljs-string">'https://some.api'</span>);
-});
-
-<span class="hljs-comment">// use tests provided by the rest-hal-test-tools package</span>
-ava(restHalTestTools.resourceImplementOptionsMethod);
-ava(restHalTestTools.resourceImplementGetMethod);
-</code></pre>
 				<h2 id="licensing">Licensing</h2>
 				<p>The code in this project is licensed under MIT license.</p>
 			</div>
@@ -116,7 +105,10 @@ ava(restHalTestTools.resourceImplementGetMethod);
 						<a href="modules/_resource_implement_options_method_.html">"resource-<wbr>implement-<wbr>options-<wbr>method"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_rest_hal_test_context_.html">"rest-<wbr>hal-<wbr>test-<wbr>context"</a>
+						<a href="modules/_resource_options_method_allow_get_.html">"resource-<wbr>options-<wbr>method-<wbr>allow-<wbr>get"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_test_context_.html">"test-<wbr>context"</a>
 					</li>
 				</ul>
 			</nav>

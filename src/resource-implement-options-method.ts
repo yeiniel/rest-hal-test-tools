@@ -1,15 +1,31 @@
-/* Common tests for REST resources */
 
-import * as superTest from "supertest";
+import * as testContext from "./test-context";
 
-import * as restHalTestContext from "./rest-hal-test-context";
+/** Test that resource implement the GET method
+ *
+ * see [[ITestContext]] for more info on how to establish the URL of the resource
+ * under test and the agent used to reach it.
+ *
+ * Example usage in typescript:
+ * ```
+ * import ava from "ava";
+ * import * as express from "express";
+ * import * as superTest from "supertest";
+ *
+ * import * as restHALTestTools from "@zephyrec/rest-hal-test-tools";
+ *
+ * ava.beforeEach((t) => {
+ *    const app = express();
+ *
+ *    t.context.agent = superTest(app);
+ *    t.context.resource = "/";
+ * });
+ *
+ * ava(restHALTestTools.resourceImplementOPTIONSMethod);
+ * ```
+ */
+export async function resourceImplementOPTIONSMethod(t: testContext.TestContext) {
+  const response = await t.context.agent.options(t.context.resource);
 
-/** Check if the resource under test implement the OPTIONS method */
-export function resourceImplementOptionsMethod(
-    t: restHalTestContext.IRestHalTestContext): superTest.Test {
-  let request =  t.context.agent.options(t.context.resource);
-
-  return request.expect((res) => {
-    t.true(res.status >= 200 && res.status < 400);
-  });
+  t.is(response.status, 200);
 }
