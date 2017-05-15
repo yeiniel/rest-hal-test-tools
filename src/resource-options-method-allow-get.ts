@@ -17,6 +17,9 @@ import * as testContext from "./test-context";
  * ava.beforeEach((t) => {
  *    const app = express();
  *
+ *    // provide an endpoint handler for the GET method
+ *    app.get("/", (_, res) => { res.end(); });
+ *
  *    t.context.agent = superTest(app);
  *    t.context.resource = "/";
  * });
