@@ -1,6 +1,6 @@
 {
   "name": "@zephyrec/rest-hal-test-tools",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Tests for RESTful APIs using HAL+JSON media type",
   "main": "src/index.js",
   "typings": "src/index.d.ts",
