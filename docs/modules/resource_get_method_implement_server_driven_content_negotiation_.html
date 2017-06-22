@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;resource-options-method-allow-get&quot; | @zephyrec/rest-hal-test-tools</title>
+	<title>&quot;resource-get-method-implement-server-driven-content-negotiation&quot; | @zephyrec/rest-hal-test-tools</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="resource_options_method_allow_get_.html">&quot;resource-options-method-allow-get&quot;</a>
+					<a href="resource_get_method_implement_server_driven_content_negotiation_.html">&quot;resource-get-method-implement-server-driven-content-negotiation&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;resource-options-method-allow-get&quot;</h1>
+			<h1>External module &quot;resource-get-method-implement-server-driven-content-negotiation&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="resource_options_method_allow_get_.html#resourceoptionsmethodallowget" class="tsd-kind-icon">resourceOPTIONSMethod<wbr>AllowGET</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="resource_get_method_implement_server_driven_content_negotiation_.html#resourcegetmethodimplementserverdrivencontentnegotiation" class="tsd-kind-icon">resourceGETMethod<wbr>Implement<wbr>Server<wbr>Driven<wbr>Content<wbr>Negotiation</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,21 +82,21 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="resourceoptionsmethodallowget" class="tsd-anchor"></a>
-					<h3>resourceOPTIONSMethod<wbr>AllowGET</h3>
+					<a name="resourcegetmethodimplementserverdrivencontentnegotiation" class="tsd-anchor"></a>
+					<h3>resourceGETMethod<wbr>Implement<wbr>Server<wbr>Driven<wbr>Content<wbr>Negotiation</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">resourceOPTIONSMethod<wbr>AllowGET<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">testContext.TestContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">resourceGETMethod<wbr>Implement<wbr>Server<wbr>Driven<wbr>Content<wbr>Negotiation<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">testContext.TestContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/c5de4e8/src/resource-options-method-allow-get.ts#L30">resource-options-method-allow-get.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/c5de4e8/src/resource-get-method-implement-server-driven-content-negotiation.ts#L34">resource-get-method-implement-server-driven-content-negotiation.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Test that resource implement the GET method</p>
+									<p>Test that resource GET method implement Server Driven Content Negotiation</p>
 								</div>
 								<p>see <a href="../interfaces/test_context_.itestcontext.html">ITestContext</a> for more info on how to establish the URL of the resource
 								under test and the agent used to reach it.</p>
@@ -111,13 +111,17 @@ ava.beforeEach(<span class="hljs-function">(<span class="hljs-params">t</span>) 
    <span class="hljs-keyword">const</span> app = express();
 
    <span class="hljs-comment">// provide an endpoint handler for the GET method</span>
-   app.get(<span class="hljs-string">"/"</span>, <span class="hljs-function">(<span class="hljs-params">_, res</span>) =&gt;</span> { res.end(); });
+  app.get(<span class="hljs-string">"/"</span>, <span class="hljs-function">(<span class="hljs-params">_, res</span>) =&gt;</span> {
+    res.format({
+      <span class="hljs-keyword">default</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> res.status(<span class="hljs-number">406</span>).end(),
+    });
+  });
 
    t.context.agent = superTest(app);
    t.context.resource = <span class="hljs-string">"/"</span>;
 });
 
-ava(restHALTestTools.resourceOPTIONSMethodAllowGET);
+ava(restHALTestTools.resourceGETMethodImplementServerDrivenNegotiation);
 </code></pre>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -141,7 +145,7 @@ ava(restHALTestTools.resourceOPTIONSMethodAllowGET);
 					<li class=" tsd-kind-external-module">
 						<a href="index_.html">"index"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="resource_get_method_implement_server_driven_content_negotiation_.html">"resource-<wbr>get-<wbr>method-<wbr>implement-<wbr>server-<wbr>driven-<wbr>content-<wbr>negotiation"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -150,7 +154,7 @@ ava(restHALTestTools.resourceOPTIONSMethodAllowGET);
 					<li class=" tsd-kind-external-module">
 						<a href="resource_implement_options_method_.html">"resource-<wbr>implement-<wbr>options-<wbr>method"</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="resource_options_method_allow_get_.html">"resource-<wbr>options-<wbr>method-<wbr>allow-<wbr>get"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -161,7 +165,7 @@ ava(restHALTestTools.resourceOPTIONSMethodAllowGET);
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="resource_options_method_allow_get_.html#resourceoptionsmethodallowget" class="tsd-kind-icon">resourceOPTIONSMethod<wbr>AllowGET</a>
+						<a href="resource_get_method_implement_server_driven_content_negotiation_.html#resourcegetmethodimplementserverdrivencontentnegotiation" class="tsd-kind-icon">resourceGETMethod<wbr>Implement<wbr>Server<wbr>Driven<wbr>Content<wbr>Negotiation</a>
 					</li>
 				</ul>
 			</nav>
