@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;resource-options-method-allow-get&quot; | @zephyrec/rest-hal-test-tools</title>
+	<title>ITestContext | @zephyrec/rest-hal-test-tools</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,79 +56,80 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_resource_options_method_allow_get_.html">&quot;resource-options-method-allow-get&quot;</a>
+					<a href="../modules/test_context_.html">&quot;test-context&quot;</a>
+				</li>
+				<li>
+					<a href="test_context_.itestcontext.html">ITestContext</a>
 				</li>
 			</ul>
-			<h1>External module &quot;resource-options-method-allow-get&quot;</h1>
+			<h1>Interface ITestContext</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Test context for RESTful tests</p>
+					</div>
+					<p>Each test require a SuperTest agent and a resource path.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ITestContext</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_resource_options_method_allow_get_.html#resourceoptionsmethodallowget" class="tsd-kind-icon">resourceOPTIONSMethod<wbr>AllowGET</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="test_context_.itestcontext.html#agent" class="tsd-kind-icon">agent</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="test_context_.itestcontext.html#resource" class="tsd-kind-icon">resource</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="resourceoptionsmethodallowget" class="tsd-anchor"></a>
-					<h3>resourceOPTIONSMethod<wbr>AllowGET</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">resourceOPTIONSMethod<wbr>AllowGET<span class="tsd-signature-symbol">(</span>t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">testContext.TestContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/b6b3dff/src/resource-options-method-allow-get.ts#L30">resource-options-method-allow-get.ts:30</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Test that resource implement the GET method</p>
-								</div>
-								<p>see <a href="../interfaces/_test_context_.itestcontext.html">ITestContext</a> for more info on how to establish the URL of the resource
-								under test and the agent used to reach it.</p>
-								<p>Example usage in typescript:</p>
-								<pre><code><span class="hljs-keyword">import</span> ava <span class="hljs-keyword">from</span> <span class="hljs-string">"ava"</span>;
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> express <span class="hljs-keyword">from</span> <span class="hljs-string">"express"</span>;
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> superTest <span class="hljs-keyword">from</span> <span class="hljs-string">"supertest"</span>;
-
-<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> restHALTestTools <span class="hljs-keyword">from</span> <span class="hljs-string">"@zephyrec/rest-hal-test-tools"</span>;
-
-ava.beforeEach(<span class="hljs-function">(<span class="hljs-params">t</span>) =&gt;</span> {
-   <span class="hljs-keyword">const</span> app = express();
-
-   <span class="hljs-comment">// provide an endpoint handler for the GET method</span>
-   app.get(<span class="hljs-string">"/"</span>, <span class="hljs-function">(<span class="hljs-params">_, res</span>) =&gt;</span> { res.end(); });
-
-   t.context.agent = superTest(app);
-   t.context.resource = <span class="hljs-string">"/"</span>;
-});
-
-ava(restHALTestTools.resourceOPTIONSMethodAllowGET);
-</code></pre>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>t: <span class="tsd-signature-type">testContext.TestContext</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="agent" class="tsd-anchor"></a>
+					<h3>agent</h3>
+					<div class="tsd-signature tsd-kind-icon">agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">superTest.SuperTest</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">superTest.Test</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/b6b3dff/src/test-context.ts#L12">test-context.ts:12</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>SuperTest agent</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="resource" class="tsd-anchor"></a>
+					<h3>resource</h3>
+					<div class="tsd-signature tsd-kind-icon">resource<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/zephyrec/rest-hal-test-tools/blob/b6b3dff/src/test-context.ts#L15">test-context.ts:15</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Resource path</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -139,26 +140,41 @@ ava(restHALTestTools.resourceOPTIONSMethodAllowGET);
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_index_.html">"index"</a>
+						<a href="../modules/index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_resource_implement_get_method_.html">"resource-<wbr>implement-<wbr>get-<wbr>method"</a>
+						<a href="../modules/resource_implement_get_method_.html">"resource-<wbr>implement-<wbr>get-<wbr>method"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_resource_implement_options_method_.html">"resource-<wbr>implement-<wbr>options-<wbr>method"</a>
+						<a href="../modules/resource_implement_options_method_.html">"resource-<wbr>implement-<wbr>options-<wbr>method"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/resource_options_method_allow_get_.html">"resource-<wbr>options-<wbr>method-<wbr>allow-<wbr>get"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_resource_options_method_allow_get_.html">"resource-<wbr>options-<wbr>method-<wbr>allow-<wbr>get"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_test_context_.html">"test-<wbr>context"</a>
+						<a href="../modules/test_context_.html">"test-<wbr>context"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_resource_options_method_allow_get_.html#resourceoptionsmethodallowget" class="tsd-kind-icon">resourceOPTIONSMethod<wbr>AllowGET</a>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="test_context_.itestcontext.html" class="tsd-kind-icon">ITest<wbr>Context</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="test_context_.itestcontext.html#agent" class="tsd-kind-icon">agent</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="test_context_.itestcontext.html#resource" class="tsd-kind-icon">resource</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/test_context_.html#testcontext" class="tsd-kind-icon">Test<wbr>Context</a>
 					</li>
 				</ul>
 			</nav>
