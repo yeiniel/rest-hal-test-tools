@@ -1,15 +1,15 @@
 
-# Ignore locally installed dependencies
+# locally installed dependencies
 /node_modules/
 
-# Ignore IDE specific files
+# IDE specific files
 /.idea/
 /.vscode/
 
-# Ignore build products
+# build products
 /src/*.js
 /src/*.d.ts
 
-# Ignore coverage report files
+# coverage report files
 /.nyc_output/
 /coverage/

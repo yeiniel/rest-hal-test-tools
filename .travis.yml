@@ -1,15 +1,11 @@
 
 language: node_js
 
-node_js:
-  - "6"
-
-cache:
-  directories:
-    - node_modules
-
 before_script:
   - npm run tslint
+
+script:
+  - nyc ava
 
 after_success:
   - './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
