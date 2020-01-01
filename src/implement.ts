@@ -46,4 +46,4 @@ export async function implement(t: executionContext.ExecutionContext, method: ht
 }
 
 // set the test title
-implement.title = (providedTitle = "", method: string, expected: boolean) => `${providedTitle} ${expected ? "" : "not"} implement ${method}`.trim();
+implement.title = (providedTitle = "", method: string, expected: boolean = true) => `${providedTitle} should ${expected ? "" : "not"} implement ${method}`.trim();
