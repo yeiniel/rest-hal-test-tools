@@ -1,8 +1,8 @@
 
 import test from "ava";
 
-import * as rhtt from ".";
+import * as package_ from ".";
 
-test("should expose package version", (t) => {
-    t.is(typeof rhtt.version, "string");
+test("should expose implement", (t) => {
+    t.is(typeof package_.implement, "function");
 });
