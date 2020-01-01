@@ -1,3 +1,6 @@
 {
-  "out": "docs"
+  "out": "docs",
+  "exclude": [
+    "src/*.test.ts"
+  ]
 }
