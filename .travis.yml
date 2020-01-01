@@ -2,7 +2,7 @@
 language: node_js
 
 before_script:
-  - npm run tslint
+  - npm run lint
 
 script:
   - nyc ava

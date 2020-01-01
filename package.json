@@ -6,6 +6,7 @@
   "typings": "src/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "lint": "tslint src/*.ts",
     "test": "ava"
   },
   "repository": {
