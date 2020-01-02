@@ -1,6 +1,6 @@
 # Tests for RESTful APIs using HAL+JSON media type
-[![Build Status](https://travis-ci.org/zephyrec/rest-hal-test-tools.svg?branch=master)](https://travis-ci.org/zephyrec/rest-hal-test-tools)
-[![Coverage Status](https://coveralls.io/repos/github/zephyrec/rest-hal-test-tools/badge.svg?branch=master)](https://coveralls.io/github/zephyrec/rest-hal-test-tools?branch=master)
+[![Build Status](https://travis-ci.org/yeiniel/rest-hal-test-tools.svg?branch=master)](https://travis-ci.org/yeiniel/rest-hal-test-tools)
+[![Coverage Status](https://coveralls.io/repos/github/yeiniel/rest-hal-test-tools/badge.svg?branch=master)](https://coveralls.io/github/yeiniel/rest-hal-test-tools?branch=master)
 
 This project provide common tests for [REST][rest] APIs that use the
 [JSON Hypertext Application Language][hal] Media Type. Provided tests
@@ -12,7 +12,7 @@ employ the [SuperTest][supertest] HTTP assertion library.
 package. You can install `rest-hal-test-tools` in your project's
 directory as usual:
 
-    npm install @zephyrec/rest-hal-test-tools --save-dev
+    npm install @yeiniel/rest-hal-test-tools --save-dev
 
 ## Reference Documentation
 Reference documentation for this project can be generated from the

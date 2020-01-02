@@ -1,19 +1,18 @@
 {
-  "name": "@zephyrec/rest-hal-test-tools",
-  "version": "2.1.1",
+  "name": "@yeiniel/rest-hal-test-tools",
+  "version": "3.0.0",
   "description": "Tests for RESTful APIs using HAL+JSON media type",
   "main": "src/index.js",
   "typings": "src/index.d.ts",
   "scripts": {
-    "prepublish": "tsc",
-    "pretest": "tsc",
-    "test": "nyc ava src/*.spec.js",
-    "tslint": "tslint -c tslint.json -e 'src/**/*.d.ts' 'src/**/*.ts'",
-    "typedoc": "typedoc --exclude **/*.spec.ts --out docs src"
+    "gen-docs": "typedoc src",
+    "build": "tsc",
+    "lint": "tslint src/*.ts",
+    "test": "ava"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zephyrec/rest-hal-test-tools.git"
+    "url": "git+https://github.com/yeiniel/rest-hal-test-tools.git"
   },
   "keywords": [
     "rest",
@@ -22,25 +21,30 @@
     "ava",
     "supertest"
   ],
-  "author": "Zephyr <lococeq.1985@gmail.com>",
+  "author": "Yeiniel Suarez Sosa <yeiniel@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zephyrec/rest-hal-test-tools/issues"
+    "url": "https://github.com/yeiniel/rest-hal-test-tools/issues"
   },
-  "homepage": "https://zephyrec.github.io/rest-hal-test-tools/",
+  "homepage": "https://github.com/yeiniel/rest-hal-test-tools#readme",
   "devDependencies": {
-    "@types/express": "^4.0.35",
-    "@types/supertest": "^2.0.0",
-    "coveralls": "^2.13.1",
-    "express": "^4.15.2",
-    "nyc": "^10.3.2",
-    "tslint": "^5.1.0",
-    "typedoc": "^0.6.0",
-    "typescript": "^2.3.1"
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.22",
+    "@types/supertest": "^2.0.8",
+    "ava": "^2.4.0",
+    "coveralls": "^3.0.9",
+    "cz-conventional-changelog": "^3.0.2",
+    "express": "^4.17.1",
+    "nyc": "^15.0.0",
+    "supertest": "^4.0.2",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typedoc": "^0.15.6",
+    "typescript": "^3.7.4"
   },
-  "dependencies": {
-    "@types/supertest": "^2.0.0",
-    "ava": "^0.19.1",
-    "supertest": "^3.0.0"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

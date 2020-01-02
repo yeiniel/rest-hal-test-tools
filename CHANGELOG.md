@@ -1,25 +1,71 @@
+# [3.0.0](https://github.com/yeiniel/rest-hal-test-tools/compare/v2.1.1...v3.0.0) (2020-01-02)
 
-<a name="1.1.1"></a>
-# [1.1.1](https://github.com/zephyrec/rest-hal-test-tools/compare/v1.1.0...v1.1.1) (2017-04-19)
-
-### Bug Fixes
-
-* #4 resourceImplementOptionsMethod Test finished without running any assertions ([56c3371](https://github.com/zephyrec/rest-hal-test-tools/commit/56c3371f28652d0b07136d6060eca71423bb29e8))
-
-<a name="1.1.0"></a>
-# [1.1.0](https://github.com/zephyrec/rest-hal-test-tools/compare/v1.0.1...v1.1.0) (2017-03-31)
-
-### Feature
-* Resource implement get method ([01fb5e3](https://github.com/zephyrec/rest-hal-test-tools/commit/01fb5e3b9861e0320b03a52304ae95602dd8a8fc))
-
-<a name="1.0.1"></a>
-## [1.0.1](https://github.com/zephyrec/rest-hal-test-tools/compare/v1.0.0...v1.0.1) (2017-03-31)
 
 ### Bug Fixes
 
-* Error on code example at README file ([e837d34](https://github.com/zephyrec/rest-hal-test-tools/commit/e837d34d6cd7964fbaa5c9b366034532b71a3215))
+* fix implement macro default test title ([4a2062f](https://github.com/yeiniel/rest-hal-test-tools/commit/4a2062f84adc81c19f024634de020fd30dda6d7b))
 
-<a name="1.0.0"></a>
+
+### Features
+
+* initial commit for the v3 ([c6c32e2](https://github.com/yeiniel/rest-hal-test-tools/commit/c6c32e222d7d6b5db20a8654d799a757254fd782)), closes [#1](https://github.com/yeiniel/rest-hal-test-tools/issues/1)
+* provide the implement server driven content negotiation test macro ([a5425a3](https://github.com/yeiniel/rest-hal-test-tools/commit/a5425a30a272a90bbef260adce63f5c298897748))
+* provide the implement test macro ([dabdc45](https://github.com/yeiniel/rest-hal-test-tools/commit/dabdc45d770aec3f8daf9db930b87c39c3b0807f))
+* provide the options allow test macro ([0f45975](https://github.com/yeiniel/rest-hal-test-tools/commit/0f45975afdb7a67b1076ffafc23d3eff93bea534))
+
+
+### BREAKING CHANGES
+
+* the package public api is no longer backward compatible
+
+
+
+# [3.0.0](https://github.com/yeiniel/rest-hal-test-tools/compare/v2.1.1...v3.0.0) (2020-01-02)
+
+
+### Bug Fixes
+
+* fix implement macro default test title ([4a2062f](https://github.com/yeiniel/rest-hal-test-tools/commit/4a2062f84adc81c19f024634de020fd30dda6d7b))
+
+
+### Features
+
+* initial commit for the v3 ([c6c32e2](https://github.com/yeiniel/rest-hal-test-tools/commit/c6c32e222d7d6b5db20a8654d799a757254fd782)), closes [#1](https://github.com/yeiniel/rest-hal-test-tools/issues/1)
+* provide the implement server driven content negotiation test macro ([a5425a3](https://github.com/yeiniel/rest-hal-test-tools/commit/a5425a30a272a90bbef260adce63f5c298897748))
+* provide the implement test macro ([dabdc45](https://github.com/yeiniel/rest-hal-test-tools/commit/dabdc45d770aec3f8daf9db930b87c39c3b0807f))
+* provide the options allow test macro ([0f45975](https://github.com/yeiniel/rest-hal-test-tools/commit/0f45975afdb7a67b1076ffafc23d3eff93bea534))
+
+
+### BREAKING CHANGES
+
+* the package public api is no longer backward compatible
+
+
+
+## [2.1.1](https://github.com/yeiniel/rest-hal-test-tools/compare/v2.1.0...v2.1.1) (2017-06-22)
+
+
+
+# [2.1.0](https://github.com/yeiniel/rest-hal-test-tools/compare/v2.0.0...v2.1.0) (2017-06-22)
+
+
+
+## [1.1.2](https://github.com/yeiniel/rest-hal-test-tools/compare/v1.1.1...v1.1.2) (2017-04-24)
+
+
+
+## [1.1.1](https://github.com/yeiniel/rest-hal-test-tools/compare/v1.1.0...v1.1.1) (2017-04-20)
+
+
+
+# [1.1.0](https://github.com/yeiniel/rest-hal-test-tools/compare/v1.0.1...v1.1.0) (2017-03-31)
+
+
+
+## [1.0.1](https://github.com/yeiniel/rest-hal-test-tools/compare/v1.0.0...v1.0.1) (2017-03-31)
+
+
+
 # 1.0.0 (2017-03-31)
 
 
