@@ -22,5 +22,5 @@ test.beforeEach((t) => {
     t.context.resource = "/";
 });
 
-// resource handle get requests
+// resource handle get requests server driven content negotiation
 test(restHALTestTools.implementSDCN, "get");
