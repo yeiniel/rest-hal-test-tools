@@ -8,8 +8,8 @@
     "gen-docs": "typedoc src",
     "build": "tsc",
     "lint": "tslint src/*.ts",
-    "prepare": "npm run build",
-    "test": "ava"
+    "prepublishOnly": "npm run build",
+    "test": "ava src/*.test.ts"
   },
   "repository": {
     "type": "git",
