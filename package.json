@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "typings": "src/index.d.ts",
   "scripts": {
+    "gen-docs": "typedoc src",
     "build": "tsc",
     "lint": "tslint src/*.ts",
     "test": "ava"
