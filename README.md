@@ -1,5 +1,5 @@
 # Tests for RESTful APIs using HAL+JSON media type
-[![Build Status](https://travis-ci.org/yeiniel/rest-hal-test-tools.svg?branch=master)](https://travis-ci.org/yeiniel/rest-hal-test-tools)
+[![Build Status](https://app.travis-ci.com/yeiniel/rest-hal-test-tools.svg?branch=master)](https://app.travis-ci.com/yeiniel/rest-hal-test-tools)
 [![Coverage Status](https://coveralls.io/repos/github/yeiniel/rest-hal-test-tools/badge.svg?branch=master)](https://coveralls.io/github/yeiniel/rest-hal-test-tools?branch=master)
 
 This project provide common tests for [REST][rest] APIs that use the
