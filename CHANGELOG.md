@@ -1,3 +1,17 @@
+# [4.0.0](https://github.com/yeiniel/rest-hal-test-tools/compare/v3.0.0...v4.0.0) (2023-01-15)
+
+
+### Code Refactoring
+
+* upgrade lib to latest version of ava ([c13b996](https://github.com/yeiniel/rest-hal-test-tools/commit/c13b996a6071be6f4375babcb92b6d0f759a70f5))
+
+
+### BREAKING CHANGES
+
+* No longer compatible with old versions of the ava test runner
+
+
+
 # [3.0.0](https://github.com/yeiniel/rest-hal-test-tools/compare/v2.1.1...v3.0.0) (2020-01-02)
 
 
