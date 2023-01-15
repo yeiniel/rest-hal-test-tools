@@ -1,6 +1,9 @@
 
-import * as executionContext from "./execution-context";
-import * as httpMethod from "./http-method";
+import ava, { TestFn } from 'ava';
+import { IContext } from "./execution-context";
+import { HttpMethod } from "./http-method";
+
+const test = ava as TestFn<IContext>;
 
 /** Test that resource options handler indicate that `method` is allowed.
  *
@@ -38,14 +41,14 @@ import * as httpMethod from "./http-method";
  * @param method Http method
  * @param expected Whether it is expected or not that resource options handler allow `method` (true by default)
  */
-export async function optionsAllow(t: executionContext.ExecutionContext,
-                                   method: httpMethod.HttpMethod,
-                                   expected = true) {
-    const response = await t.context.agent.options(t.context.resource);
+export const optionsAllow = test.macro<[HttpMethod, boolean?]>({
+    exec: async(t, method: HttpMethod, expected = true) => {
+        const response = await t.context.agent.options(t.context.resource);
 
-    t[expected ? "not" : "is"](response.header.allow.indexOf(method.toUpperCase()), -1);
-}
+        const assertion: (v: number, e: number) => void = expected ? t.not : t.is;
 
-// set the test title
-optionsAllow.title = (providedTitle = "", method: string, expected: boolean = true) =>
-    `${providedTitle} options should ${expected ? "" : "not"} allow ${method}`.trim();
+        assertion(response.header.allow.indexOf(method.toUpperCase()), -1);
+    },
+    title: (providedTitle = "", method: string, expected = true) =>
+        `${providedTitle} options should ${expected ? "" : "not"} allow ${method}`.trim()
+});

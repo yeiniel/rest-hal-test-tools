@@ -1,5 +1,5 @@
 
-import * as ava from "ava";
+import { ExecutionContext as IExecutionContext } from "ava";
 import * as superTest from "supertest";
 
 /** Test context
@@ -18,4 +18,4 @@ export interface IContext {
 }
 
 /** Execution context as required by tests implemented by this package */
-export type ExecutionContext = ava.ExecutionContext<IContext>;
+export type ExecutionContext = IExecutionContext<IContext>;

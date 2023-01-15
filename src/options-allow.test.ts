@@ -1,11 +1,11 @@
 
-import anyTest, { TestInterface } from "ava";
+import anyTest, { TestFn } from "ava";
 import express from "express";
 import superTest from "supertest";
 
 import * as restHALTestTools from ".";
 
-const test = anyTest as TestInterface<restHALTestTools.IContext>;
+const test = anyTest as TestFn<restHALTestTools.IContext>;
 
 test.beforeEach((t) => {
     const app = express();

@@ -1,6 +1,9 @@
 
-import * as executionContext from "./execution-context";
-import * as httpMethod from "./http-method";
+import ava, { TestFn } from 'ava';
+import { IContext } from "./execution-context";
+import { HttpMethod } from "./http-method";
+
+const test = ava as TestFn<IContext>;
 
 /** Test that resource `method` handling implement Server Driven Content Negotiation
  *
@@ -42,15 +45,15 @@ import * as httpMethod from "./http-method";
  *      `method` handler used to trigger the handler to respond with a status
  *      code of 406 ("not-supported-content-type" by default).
  */
-export async function implementSDCN(t: executionContext.ExecutionContext,
-                                    method: httpMethod.HttpMethod,
-                                    notSupportedContentType = "not-supported-content-type") {
-    const response = await t.context.agent[method](t.context.resource)
-        .set("Accept", notSupportedContentType);
+export const implementSDCN = test.macro<[HttpMethod, string?]>({
+    exec: async(t,
+        method: HttpMethod,
+        notSupportedContentType = "not-supported-content-type") => {
+        const response = await t.context.agent[method](t.context.resource)
+            .set("Accept", notSupportedContentType);
 
-    t.is(response.status, 406);
-}
-
-// set the test title
-implementSDCN.title = (providedTitle = "", method: string, notSupportedContentType = "not-supported-content-type") =>
-    `${providedTitle} should implement ${method} server driven content negotiation`.trim();
+        t.is(response.status, 406);
+    },
+    title: (providedTitle = "", method: string) =>
+    `${providedTitle} should implement ${method} server driven content negotiation`.trim()
+});

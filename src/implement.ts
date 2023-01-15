@@ -1,6 +1,8 @@
+import ava, { TestFn } from 'ava';
+import { IContext } from "./execution-context";
+import { HttpMethod } from "./http-method";
 
-import * as executionContext from "./execution-context";
-import * as httpMethod from "./http-method";
+const test = ava as TestFn<IContext>;
 
 /** Test that resource handle `method`.
  *
@@ -39,12 +41,14 @@ import * as httpMethod from "./http-method";
  * @param method Http method
  * @param expected Whether it is expected or not that resource handle `method` (true by default)
  */
-export async function implement(t: executionContext.ExecutionContext, method: httpMethod.HttpMethod, expected = true) {
-    const response = await t.context.agent[method](t.context.resource);
+export const implement = test.macro<[HttpMethod, boolean?]>({
+    exec: async (t, method: HttpMethod, expected = true) => {
+        const response = await t.context.agent[method](t.context.resource);
 
-    t[expected ? "not" : "is"](response.status, 405);
-}
+        const assertion: (v: number, e: number) => void = expected ? t.not : t.is;
 
-// set the test title
-implement.title = (providedTitle = "", method: string, expected: boolean = true) =>
-    `${providedTitle} should ${expected ? "" : "not"} implement ${method}`.trim();
+        assertion(response.status, 405);
+    },
+    title: (providedTitle = "", method: string, expected = true) =>
+    `${providedTitle} should ${expected ? "" : "not"} implement ${method}`.trim()
+});

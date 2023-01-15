@@ -2,7 +2,6 @@
 "use strict";
 
 export default {
-    "compileEnhancements": false,
     "extensions": [
         "ts"
     ],
