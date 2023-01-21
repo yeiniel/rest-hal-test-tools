@@ -1,3 +1,12 @@
+## [4.0.1](https://github.com/yeiniel/rest-hal-test-tools/compare/v4.0.0...v4.0.1) (2023-01-21)
+
+
+### Bug Fixes
+
+* include .d.ts files in published package ([f358195](https://github.com/yeiniel/rest-hal-test-tools/commit/f3581952fee911dc12285c88ea378754f244c24c))
+
+
+
 # [4.0.0](https://github.com/yeiniel/rest-hal-test-tools/compare/v3.0.0...v4.0.0) (2023-01-15)
 
 

@@ -5,6 +5,7 @@ tsconfig.json
 tslint.json
 typedoc.json
 src/*.ts
+!src/*.d.ts
 src/*.test.js
 .nyc_output
 .idea
